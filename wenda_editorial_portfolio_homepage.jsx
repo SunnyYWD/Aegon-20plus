@@ -173,25 +173,27 @@ function HeroVisual({ t, isZh }) {
 
 function AboutFusion({ about, isZh }) {
   return (
-    <div className="mx-auto grid max-w-[1560px] grid-cols-1 border-t border-[#ded5c8]/80 lg:grid-cols-[0.84fr_1.16fr]">
-      <div className="relative overflow-hidden border-b border-[#ded5c8]/80 px-6 py-12 md:px-10 lg:border-b-0 lg:border-r xl:pl-28">
-        <div className="absolute right-8 top-8 h-40 w-40 rounded-full border border-[#cdbda5]/70" />
-        <div className="absolute bottom-0 right-0 h-32 w-56 bg-[radial-gradient(circle_at_70%_40%,rgba(167,147,114,.18),transparent_60%)]" />
+    <div className="mx-auto grid max-w-[1560px] grid-cols-1 border-t border-[#ded5c8]/80 bg-[#f4eee5]/50 lg:grid-cols-[0.78fr_1.22fr]">
+      <div className="relative overflow-hidden border-b border-[#ded5c8]/80 px-6 py-11 md:px-10 lg:border-b-0 lg:border-r xl:pl-28">
+        <div className="absolute right-8 top-8 h-36 w-36 rounded-full border border-[#cdbda5]/70" />
+        <div className="absolute bottom-0 right-0 h-32 w-56 bg-[radial-gradient(circle_at_70%_40%,rgba(167,147,114,.2),transparent_60%)]" />
         <div className="relative max-w-2xl">
-          <div className="mb-7 flex items-center gap-4 text-[#9c875f]">
-            <span className="h-px w-16 bg-current" />
+          <div className="mb-6 flex items-center gap-4 text-[#9c875f]">
+            <span className="h-px w-14 bg-current" />
             <Icon name="spark" className="h-4 w-4" strokeWidth={1.1} />
           </div>
-          <h2 className={`${isZh ? "text-[2.35rem] tracking-[0.18em]" : "font-en-title text-[2.45rem] uppercase tracking-[0.18em]"} text-[#1d1b18]`}>{about.title}</h2>
-          <p className={`${isZh ? "leading-9" : "leading-8"} mt-7 text-base text-[#665d52]`}>{about.body}</p>
+          <h2 className={`${isZh ? "text-[2rem] tracking-[0.18em]" : "font-en-title text-[2.15rem] uppercase tracking-[0.18em]"} text-[#1d1b18]`}>{about.title}</h2>
+          <p className={`${isZh ? "leading-9" : "leading-8"} mt-6 text-base text-[#665d52]`}>{about.body}</p>
         </div>
       </div>
       <div className="grid grid-cols-1 divide-y divide-[#ded5c8]/80 md:grid-cols-4 md:divide-x md:divide-y-0">
         {about.items.map(([icon, label, title, body]) => (
-          <div key={label} className="group relative min-h-[280px] px-7 py-10 transition duration-300 hover:bg-[#fbf7ef]/55">
-            <Icon name={icon} className="h-8 w-8 text-[#887657] transition duration-300 group-hover:-translate-y-1" strokeWidth={1.2} />
-            <p className={`${isZh ? "tracking-[0.22em]" : "uppercase tracking-[0.28em]"} mt-8 text-[10px] font-bold text-[#8d806f]`}>{label}</p>
-            <h3 className={`${isZh ? "text-xl tracking-[0.04em]" : "font-en-title text-2xl"} mt-5 text-[#231f1a]`}>{title}</h3>
+          <div key={label} className="group relative min-h-[260px] px-7 py-9 transition duration-300 hover:bg-[#fbf7ef]/65">
+            <div className="flex h-11 w-11 items-center justify-center border border-[#cdbda5] bg-[#f8f3eb]/60 text-[#887657] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#9c875f]">
+              <Icon name={icon} className="h-6 w-6" strokeWidth={1.2} />
+            </div>
+            <p className={`${isZh ? "tracking-[0.22em]" : "uppercase tracking-[0.28em]"} mt-7 text-[10px] font-bold text-[#8d806f]`}>{label}</p>
+            <h3 className={`${isZh ? "text-xl tracking-[0.04em]" : "font-en-title text-2xl"} mt-4 text-[#231f1a]`}>{title}</h3>
             <p className={`${isZh ? "leading-8" : "leading-7"} mt-4 text-sm text-[#6d6459]`}>{body}</p>
           </div>
         ))}
@@ -214,7 +216,31 @@ function PaperSpotlight({ paper, isZh }) {
 function ProjectCard({ item, isZh, details, index }) {
   const [title, category, body, image, tags, href = "#"] = item;
   const isExternal = href !== "#";
-  return <article className={`group relative overflow-hidden border border-[#d9d0c4] bg-[#f7f2ea] shadow-[0_18px_60px_rgba(66,50,30,.05)] transition duration-500 hover:-translate-y-1.5 hover:border-[#bba98e] hover:shadow-[0_32px_100px_rgba(66,50,30,.13)] ${index === 0 ? "lg:col-span-2" : ""}`}><div className={`h-48 overflow-hidden ${index === 0 ? "lg:h-56" : ""}`}><AbstractImage type={image} /></div><div className="p-7"><div className="mb-5 flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="rounded-full border border-[#d3c4ad] bg-[#fbf7ef]/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8a7454]">{tag}</span>)}</div><h3 className="font-en-title text-3xl text-[#211e19]">{title}</h3><p className={`${isZh ? "tracking-[0.15em]" : "uppercase tracking-[0.24em]"} mt-4 text-[10px] font-bold text-[#8c7654]`}>{category}</p><p className="mt-5 min-h-28 text-sm leading-7 text-[#6c6256]">{body}</p><a href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined} className="mt-6 inline-flex items-center gap-5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#5d5347]">{details}<Icon name="arrow" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a></div></article>;
+  const number = String(index + 1).padStart(2, "0");
+  return (
+    <article className="group relative flex h-full min-h-[620px] flex-col overflow-hidden border border-[#d8cdbd] bg-[#f8f3eb] shadow-[0_18px_70px_rgba(66,50,30,.06)] transition duration-500 hover:-translate-y-1 hover:border-[#aa9675] hover:bg-[#fbf7ef] hover:shadow-[0_30px_110px_rgba(66,50,30,.13)]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-[#aa9675] to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+      <div className="relative h-56 overflow-hidden border-b border-[#ded5c8]/80">
+        <AbstractImage type={image} />
+        <div className="absolute left-5 top-5 border border-[#d4c7b4] bg-[#f8f3eb]/78 px-3 py-2 font-en-title text-sm text-[#6c604f] backdrop-blur-sm">{number}</div>
+      </div>
+      <div className="flex flex-1 flex-col p-7">
+        <div className="mb-5 flex min-h-[54px] flex-wrap content-start gap-2">
+          {tags.map((tag) => (
+            <span key={tag} className="border border-[#d3c4ad] bg-[#fbf7ef]/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8a7454]">{tag}</span>
+          ))}
+        </div>
+        <h3 className={`${isZh ? "text-[1.55rem] leading-tight tracking-[0.03em]" : "font-en-title text-[1.9rem] leading-tight"} text-[#211e19]`}>{title}</h3>
+        <p className={`${isZh ? "tracking-[0.14em]" : "uppercase tracking-[0.22em]"} mt-4 min-h-[30px] text-[10px] font-bold leading-5 text-[#8c7654]`}>{category}</p>
+        <div className="my-6 h-px w-full bg-[#ded5c8]" />
+        <p className={`${isZh ? "leading-7" : "leading-7"} flex-1 text-sm text-[#6c6256]`}>{body}</p>
+        <a href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined} className="mt-8 inline-flex items-center justify-between border-t border-[#ded5c8] pt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#5d5347] transition hover:text-[#8a7454]">
+          <span>{details}</span>
+          <Icon name={isExternal ? "external" : "arrow"} className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+      </div>
+    </article>
+  );
 }
 
 function ExperienceTimeline({ items, isZh }) {
@@ -252,7 +278,7 @@ export default function WendaEditorialPortfolio() {
       </section>
       <section id="experience" className="relative z-10 border-b border-[#ded5c8]/80 px-6 py-18 md:px-10 xl:px-24"><div className="mx-auto max-w-[1560px]"><SectionTitle action={t.experienceAction} isZh={isZh}>{t.experienceTitle}</SectionTitle><ExperienceTimeline items={t.experience} isZh={isZh} /></div></section>
       <PaperSpotlight paper={t.paper} isZh={isZh} />
-      <section id="projects" className="relative z-10 border-b border-[#ded5c8]/80 px-6 py-18 md:px-10 xl:px-24"><div className="mx-auto max-w-[1560px]"><SectionTitle action={t.projectsAction} isZh={isZh}>{t.projectsTitle}</SectionTitle><div className="grid grid-cols-1 gap-8 lg:grid-cols-4">{t.projects.map((item, index) => <ProjectCard key={item[0]} item={item} isZh={isZh} details={t.details} index={index} />)}</div></div></section>
+      <section id="projects" className="relative z-10 border-b border-[#ded5c8]/80 px-6 py-18 md:px-10 xl:px-24"><div className="mx-auto max-w-[1560px]"><SectionTitle action={t.projectsAction} isZh={isZh}>{t.projectsTitle}</SectionTitle><div className="grid auto-rows-fr grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">{t.projects.map((item, index) => <ProjectCard key={item[0]} item={item} isZh={isZh} details={t.details} index={index} />)}</div></div></section>
       <footer id="contact" className="relative z-10 px-6 py-12 md:px-10 xl:px-24"><div className="mx-auto grid max-w-[1560px] grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_2fr_auto]"><div><h2 className={`${isZh ? "text-4xl tracking-[0.18em]" : "font-en-title text-4xl uppercase tracking-[0.18em]"}`}>{t.contact.title}</h2><p className={`${isZh ? "leading-7" : "leading-6"} mt-4 text-sm text-[#6c6256]`}>{t.contact.desc}</p></div><div className="grid grid-cols-1 gap-6 border-y border-[#d8cfc1] py-7 md:grid-cols-3 lg:border-x lg:border-y-0 lg:px-12 lg:py-0"><a className="flex items-center gap-4 text-sm text-[#5a5148] transition hover:text-[#9a835e]" href="mailto:yu_wenda@126.com"><Icon name="mail" className="h-5 w-5" strokeWidth={1.3} /> yu_wenda@126.com</a><span className="flex items-center gap-4 text-sm text-[#5a5148]"><Icon name="map" className="h-5 w-5" strokeWidth={1.3} /> {t.contact.location}</span><span className="flex items-center gap-4 text-sm text-[#5a5148]"><Icon name="user" className="h-5 w-5" strokeWidth={1.3} /> {t.contact.org}</span></div><a href="mailto:yu_wenda@126.com" className="group shimmer relative inline-flex h-14 items-center justify-center gap-8 overflow-hidden border border-[#9e907e] px-9 text-xs font-bold uppercase tracking-[0.25em] transition hover:bg-[#211e19] hover:text-[#f6f1e9]"><span className="relative z-10">{t.contact.cta}</span><Icon name="arrow" className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a></div><div className="mx-auto mt-10 flex max-w-[1560px] flex-col gap-5 border-t border-[#d8cfc1] pt-7 text-[11px] uppercase tracking-[0.24em] text-[#7a7064] md:flex-row md:items-center md:justify-between"><span>{t.contact.copyright}</span><div className="flex gap-9">{t.contact.links.map((item) => <a className="transition hover:text-[#8c7654]" key={item} href="#">{item}</a>)}</div></div></footer>
     </main>
   );
