@@ -23,7 +23,7 @@ function Icon({ name, className = "h-5 w-5", strokeWidth = 1.35 }) {
 const DATA = {
   en: {
     brand: "Wenda Yu",
-    nav: [["About", "about"], ["Paper", "paper"], ["Experience", "experience"], ["Projects", "projects"], ["Contact", "contact"]],
+    nav: [["About", "about"], ["Experience", "experience"], ["Paper", "paper"], ["Projects", "projects"], ["Contact", "contact"]],
     lang: "中文",
     side: "Based in Shanghai",
     hero: {
@@ -64,7 +64,7 @@ const DATA = {
   },
   zh: {
     brand: "于闻达",
-    nav: [["关于", "about"], ["论文", "paper"], ["经历", "experience"], ["项目", "projects"], ["联系", "contact"]],
+    nav: [["关于", "about"], ["经历", "experience"], ["论文", "paper"], ["项目", "projects"], ["联系", "contact"]],
     lang: "EN",
     side: "现居上海",
     hero: {
@@ -171,6 +171,35 @@ function HeroVisual({ t, isZh }) {
   );
 }
 
+function AboutFusion({ about, isZh }) {
+  return (
+    <div className="mx-auto grid max-w-[1560px] grid-cols-1 border-t border-[#ded5c8]/80 lg:grid-cols-[0.84fr_1.16fr]">
+      <div className="relative overflow-hidden border-b border-[#ded5c8]/80 px-6 py-12 md:px-10 lg:border-b-0 lg:border-r xl:pl-28">
+        <div className="absolute right-8 top-8 h-40 w-40 rounded-full border border-[#cdbda5]/70" />
+        <div className="absolute bottom-0 right-0 h-32 w-56 bg-[radial-gradient(circle_at_70%_40%,rgba(167,147,114,.18),transparent_60%)]" />
+        <div className="relative max-w-2xl">
+          <div className="mb-7 flex items-center gap-4 text-[#9c875f]">
+            <span className="h-px w-16 bg-current" />
+            <Icon name="spark" className="h-4 w-4" strokeWidth={1.1} />
+          </div>
+          <h2 className={`${isZh ? "text-[2.35rem] tracking-[0.18em]" : "font-en-title text-[2.45rem] uppercase tracking-[0.18em]"} text-[#1d1b18]`}>{about.title}</h2>
+          <p className={`${isZh ? "leading-9" : "leading-8"} mt-7 text-base text-[#665d52]`}>{about.body}</p>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 divide-y divide-[#ded5c8]/80 md:grid-cols-4 md:divide-x md:divide-y-0">
+        {about.items.map(([icon, label, title, body]) => (
+          <div key={label} className="group relative min-h-[280px] px-7 py-10 transition duration-300 hover:bg-[#fbf7ef]/55">
+            <Icon name={icon} className="h-8 w-8 text-[#887657] transition duration-300 group-hover:-translate-y-1" strokeWidth={1.2} />
+            <p className={`${isZh ? "tracking-[0.22em]" : "uppercase tracking-[0.28em]"} mt-8 text-[10px] font-bold text-[#8d806f]`}>{label}</p>
+            <h3 className={`${isZh ? "text-xl tracking-[0.04em]" : "font-en-title text-2xl"} mt-5 text-[#231f1a]`}>{title}</h3>
+            <p className={`${isZh ? "leading-8" : "leading-7"} mt-4 text-sm text-[#6d6459]`}>{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function PaperSpotlight({ paper, isZh }) {
   return (
     <section id="paper" className="relative z-10 border-b border-[#ded5c8]/80 bg-[#f1eadf]/45 px-6 py-16 md:px-10 xl:px-24">
@@ -200,10 +229,29 @@ export default function WendaEditorialPortfolio() {
     <main className={`${isZh ? "font-cn-body" : "font-en-body"} min-h-screen bg-[#f6f1e9] text-[#24211d] antialiased selection:bg-[#d7c2a2] selection:text-[#1e1a15]`}>
       <style>{CSS}</style><div className="pointer-events-none fixed inset-0 opacity-[0.46] [background:radial-gradient(circle_at_20%_10%,#fff_0,transparent_25%),radial-gradient(circle_at_82%_0,#e5d8c5_0,transparent_30%),linear-gradient(120deg,rgba(166,143,101,.08),transparent_34%,rgba(255,255,255,.2)_70%,transparent)]" /><div className="pointer-events-none fixed inset-0 opacity-[0.18] [background-image:radial-gradient(#9b8766_0.7px,transparent_0.7px)] [background-size:24px_24px]" />
       <header className="sticky top-0 z-50 border-b border-[#ded5c8]/80 bg-[#f6f1e9]/78 backdrop-blur-xl"><div className="mx-auto flex max-w-[1560px] items-center justify-between px-6 py-5 md:px-10 md:py-7"><a href="#" className={`${isZh ? "font-cn-title text-[1.72rem] tracking-[0.14em]" : "font-en-title text-[1.65rem] tracking-[0.08em]"} text-[#161410]`}>{t.brand}</a><nav className="hidden items-center gap-10 lg:flex xl:gap-12">{t.nav.map(([label, id]) => <a key={id} href={`#${id}`} className={`${isZh ? "tracking-[0.22em]" : "uppercase tracking-[0.32em]"} relative text-[11px] font-semibold text-[#312d27] transition hover:text-[#a38455] after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-[#a38455] after:transition-all hover:after:w-full`}>{label}</a>)}</nav><div className="flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#312d27]"><Icon name="sun" className="h-5 w-5" strokeWidth={1.2} /><button type="button" onClick={() => setLang(isZh ? "en" : "zh")} className="min-w-12 rounded-full border border-[#d6c7b1] bg-[#fbf7ef]/70 px-3 py-2 text-center transition hover:border-[#a38455] hover:text-[#a38455]">{t.lang}</button><Icon name="moon" className="h-4 w-4" strokeWidth={1.2} /></div></div></header>
-      <section className="relative z-10 overflow-hidden border-b border-[#ded5c8]/80"><div className="mx-auto grid max-w-[1560px] grid-cols-1 lg:grid-cols-[1.05fr_0.95fr]"><div className="relative px-6 py-20 md:px-10 lg:py-32 xl:pl-28"><div className="absolute left-10 top-1/2 hidden -translate-y-1/2 flex-col items-center gap-8 xl:flex"><div className="h-28 w-px bg-[#b5a183]" /><p className={`${isZh ? "tracking-[0.3em]" : "tracking-[0.34em]"} rotate-180 text-[11px] font-semibold uppercase text-[#51483c] [writing-mode:vertical-rl]`}>{t.side}</p><div className="h-28 w-px bg-[#b5a183]" /></div><p className={`${isZh ? "tracking-[0.24em]" : "uppercase tracking-[0.38em]"} mb-8 text-xs font-bold text-[#5d554b]`}>{t.hero.eyebrow}</p><h1 className={`${isZh ? "font-cn-title text-[clamp(2.8rem,5.8vw,5.4rem)] tracking-[0.06em]" : "font-en-title text-[clamp(3.4rem,7vw,6.2rem)] tracking-[0.035em]"} leading-[1.06] text-[#14120f]`}>{t.hero.title}</h1><div className="mt-8 flex items-center gap-5"><div className="h-px w-20 bg-[#a89272]" /><Icon name="spark" className="h-4 w-4 text-[#a89272]" /></div><p className={`${isZh ? "text-lg leading-9" : "text-lg leading-8"} mt-9 max-w-xl text-[#6a6258]`}>{t.hero.desc}</p><div className="mt-12 flex flex-wrap items-center gap-6"><a href="#projects" className="group shimmer relative inline-flex h-12 items-center gap-8 overflow-hidden bg-[#a79372] px-9 text-xs font-bold uppercase tracking-[0.25em] text-white transition hover:bg-[#8d795a]"><span className="relative z-10">{t.hero.primary}</span><Icon name="arrow" className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a><a href="#contact" className="group inline-flex h-12 items-center gap-4 border border-[#b9ac99] bg-[#fbf7ef]/40 px-8 text-xs font-bold uppercase tracking-[0.25em] text-[#4e4538] transition hover:border-[#8d795a] hover:text-[#8d795a]">{t.hero.secondary}<Icon name="arrow" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a></div></div><HeroVisual t={t} isZh={isZh} /></div></section>
-      <PaperSpotlight paper={t.paper} isZh={isZh} />
-      <section id="about" className="relative z-10 border-b border-[#ded5c8]/80"><div className="mx-auto grid max-w-[1560px] grid-cols-1 gap-0 px-6 py-12 md:px-10 lg:grid-cols-[280px_1fr_1.35fr] xl:px-24"><div className="h-44 overflow-hidden bg-[#ddd3c5] lg:h-auto"><div className="relative h-full min-h-44"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(135deg,#8c7f6c_1px,transparent_1px)] [background-size:22px_22px]" /><div className="absolute left-10 top-12 h-28 w-28 rounded-full bg-[#b7a78f]" /><div className="absolute left-20 top-16 h-2/3 w-px bg-[#635746]" /><div className="absolute bottom-8 right-8 h-16 w-24 rounded-full bg-[#f6f1e9] shadow-inner" /><div className="absolute right-12 top-10 h-20 w-32 rounded-t-full border border-[#8c7f6c]" /></div></div><div className="border-b border-[#ded5c8]/80 px-0 py-10 lg:border-b-0 lg:border-r lg:px-12 lg:py-4"><h2 className={`${isZh ? "text-4xl tracking-[0.18em]" : "font-en-title text-4xl uppercase tracking-[0.18em]"}`}>{t.about.title}</h2><p className={`${isZh ? "leading-9" : "leading-8"} mt-6 max-w-2xl text-base text-[#665d52]`}>{t.about.body}</p></div><div className="grid grid-cols-1 divide-y divide-[#ded5c8]/80 md:grid-cols-4 md:divide-x md:divide-y-0 lg:pl-10">{t.about.items.map(([icon, label, title, body]) => <div key={label} className="group px-8 py-8 transition hover:bg-[#fbf7ef]/50"><Icon name={icon} className="h-8 w-8 text-[#887657] transition duration-300 group-hover:-translate-y-1" strokeWidth={1.2} /><p className={`${isZh ? "tracking-[0.22em]" : "uppercase tracking-[0.28em]"} mt-7 text-[10px] font-bold text-[#8d806f]`}>{label}</p><h3 className="mt-4 font-en-title text-xl text-[#231f1a]">{title}</h3><p className={`${isZh ? "leading-7" : "leading-6"} mt-3 text-sm text-[#6d6459]`}>{body}</p></div>)}</div></div></section>
+      <section id="about" className="relative z-10 overflow-hidden border-b border-[#ded5c8]/80">
+        <div className="mx-auto grid max-w-[1560px] grid-cols-1 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="relative px-6 py-20 md:px-10 lg:py-32 xl:pl-28">
+            <div className="absolute left-10 top-1/2 hidden -translate-y-1/2 flex-col items-center gap-8 xl:flex">
+              <div className="h-28 w-px bg-[#b5a183]" />
+              <p className={`${isZh ? "tracking-[0.3em]" : "tracking-[0.34em]"} rotate-180 text-[11px] font-semibold uppercase text-[#51483c] [writing-mode:vertical-rl]`}>{t.side}</p>
+              <div className="h-28 w-px bg-[#b5a183]" />
+            </div>
+            <p className={`${isZh ? "tracking-[0.24em]" : "uppercase tracking-[0.38em]"} mb-8 text-xs font-bold text-[#5d554b]`}>{t.hero.eyebrow}</p>
+            <h1 className={`${isZh ? "font-cn-title text-[clamp(2.8rem,5.8vw,5.4rem)] tracking-[0.06em]" : "font-en-title text-[clamp(3.4rem,7vw,6.2rem)] tracking-[0.035em]"} leading-[1.06] text-[#14120f]`}>{t.hero.title}</h1>
+            <div className="mt-8 flex items-center gap-5"><div className="h-px w-20 bg-[#a89272]" /><Icon name="spark" className="h-4 w-4 text-[#a89272]" /></div>
+            <p className={`${isZh ? "text-lg leading-9" : "text-lg leading-8"} mt-9 max-w-xl text-[#6a6258]`}>{t.hero.desc}</p>
+            <div className="mt-12 flex flex-wrap items-center gap-6">
+              <a href="#projects" className="group shimmer relative inline-flex h-12 items-center gap-8 overflow-hidden bg-[#a79372] px-9 text-xs font-bold uppercase tracking-[0.25em] text-white transition hover:bg-[#8d795a]"><span className="relative z-10">{t.hero.primary}</span><Icon name="arrow" className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a>
+              <a href="#contact" className="group inline-flex h-12 items-center gap-4 border border-[#b9ac99] bg-[#fbf7ef]/40 px-8 text-xs font-bold uppercase tracking-[0.25em] text-[#4e4538] transition hover:border-[#8d795a] hover:text-[#8d795a]">{t.hero.secondary}<Icon name="arrow" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a>
+            </div>
+          </div>
+          <HeroVisual t={t} isZh={isZh} />
+        </div>
+        <AboutFusion about={t.about} isZh={isZh} />
+      </section>
       <section id="experience" className="relative z-10 border-b border-[#ded5c8]/80 px-6 py-18 md:px-10 xl:px-24"><div className="mx-auto max-w-[1560px]"><SectionTitle action={t.experienceAction} isZh={isZh}>{t.experienceTitle}</SectionTitle><ExperienceTimeline items={t.experience} isZh={isZh} /></div></section>
+      <PaperSpotlight paper={t.paper} isZh={isZh} />
       <section id="projects" className="relative z-10 border-b border-[#ded5c8]/80 px-6 py-18 md:px-10 xl:px-24"><div className="mx-auto max-w-[1560px]"><SectionTitle action={t.projectsAction} isZh={isZh}>{t.projectsTitle}</SectionTitle><div className="grid grid-cols-1 gap-8 lg:grid-cols-4">{t.projects.map((item, index) => <ProjectCard key={item[0]} item={item} isZh={isZh} details={t.details} index={index} />)}</div></div></section>
       <footer id="contact" className="relative z-10 px-6 py-12 md:px-10 xl:px-24"><div className="mx-auto grid max-w-[1560px] grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_2fr_auto]"><div><h2 className={`${isZh ? "text-4xl tracking-[0.18em]" : "font-en-title text-4xl uppercase tracking-[0.18em]"}`}>{t.contact.title}</h2><p className={`${isZh ? "leading-7" : "leading-6"} mt-4 text-sm text-[#6c6256]`}>{t.contact.desc}</p></div><div className="grid grid-cols-1 gap-6 border-y border-[#d8cfc1] py-7 md:grid-cols-3 lg:border-x lg:border-y-0 lg:px-12 lg:py-0"><a className="flex items-center gap-4 text-sm text-[#5a5148] transition hover:text-[#9a835e]" href="mailto:yu_wenda@126.com"><Icon name="mail" className="h-5 w-5" strokeWidth={1.3} /> yu_wenda@126.com</a><span className="flex items-center gap-4 text-sm text-[#5a5148]"><Icon name="map" className="h-5 w-5" strokeWidth={1.3} /> {t.contact.location}</span><span className="flex items-center gap-4 text-sm text-[#5a5148]"><Icon name="user" className="h-5 w-5" strokeWidth={1.3} /> {t.contact.org}</span></div><a href="mailto:yu_wenda@126.com" className="group shimmer relative inline-flex h-14 items-center justify-center gap-8 overflow-hidden border border-[#9e907e] px-9 text-xs font-bold uppercase tracking-[0.25em] transition hover:bg-[#211e19] hover:text-[#f6f1e9]"><span className="relative z-10">{t.contact.cta}</span><Icon name="arrow" className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></a></div><div className="mx-auto mt-10 flex max-w-[1560px] flex-col gap-5 border-t border-[#d8cfc1] pt-7 text-[11px] uppercase tracking-[0.24em] text-[#7a7064] md:flex-row md:items-center md:justify-between"><span>{t.contact.copyright}</span><div className="flex gap-9">{t.contact.links.map((item) => <a className="transition hover:text-[#8c7654]" key={item} href="#">{item}</a>)}</div></div></footer>
     </main>
