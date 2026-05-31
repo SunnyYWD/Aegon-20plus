@@ -37,33 +37,36 @@ const DATA = {
     location: "Shanghai, China",
     email: "yu_wenda@126.com",
     intro: [
-      "I’m Wenda Yu, a software engineering undergraduate at Tongji University. My work connects embodied AI research, efficient VLA inference, safety evaluation, and AI-native product building.",
-      "I am interested in systems that remember context, act safely, and turn research ideas into working products."
+      "I’m Wenda Yu, a software engineering undergraduate at Tongji University. My research interest centers on multimodal agents for real-world environments. I currently focus on VLA models and world models, with prior research in efficient inference and adversarial attack-defense.",
+      "I am exploring how embodied agents can move beyond direct action prediction toward world-model-assisted planning and reliable execution, while also studying agents, LLM memory, and the organization of multimodal interaction histories."
     ],
     links: [["Email", "mailto:yu_wenda@126.com"], ["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"]],
     interestsTitle: "Research Interests",
-    interests: ["Embodied AI", "Efficient VLA inference", "Safety evaluation", "Personal agents", "Human-centered AI products"],
+    interests: ["Real-world multimodal agents", "Efficient VLA inference", "Reliable execution", "World models / WAM", "Agents", "LLM Memory", "Multimodal understanding"],
     focusTitle: "Focus",
     focus: [
       ["grad", "Background", "Tongji University", "Software Engineering undergraduate in the College of Computer Science and Technology."],
-      ["cpu", "Research", "Embodied AI", "Efficient inference, adaptive computation, and safety evaluation for VLA systems."],
-      ["pen", "Builder", "AI Products", "From personal agents to hiring systems, turning ideas into usable prototypes."],
-      ["book", "Interests", "Long-term Thinking", "Technology, society, finance, history, product design, and human-centered systems."]
+      ["cpu", "Research", "VLA & Embodied AI", "Efficient inference, reliable execution, adaptive computation, and safety evaluation for VLA systems."],
+      ["pen", "Direction", "World Models", "Understanding how actions change the environment, with prediction and planning as a path toward real-world embodied intelligence."],
+      ["book", "Agent", "LLM Memory & Multimodal Signals", "Memory mechanisms for agents, plus the retrieval and use of visual, language, action, and feedback histories."]
     ],
     newsTitle: "News",
     news: [
-      ["2026", "AC²-VLA was accepted at IJCAI 2026."],
-      ["2026", "Started a research thread on VLA safety and robustness."],
-      ["2025", "Worked on AC²-VLA efficient VLA inference with CogACT, SIMPLER, and Open-X."],
-      ["2025", "Built AI product prototypes including Me Agent and CareerPilot."]
+      ["2026.05", "AC²-VLA paper was accepted by IJCAI 2026."],
+      ["2026.04", "Independently developed Me Agent, an iOS app for personal agents and long-term memory."],
+      ["2026.01", "Started research on VLA safety and robustness."],
+      ["2025.09", "Started SmartHire, an intelligent recruiting and career-growth system."],
+      ["2025.08", "Started AC²-VLA efficient VLA inference research and interned at Huawei Shanghai Research Institute."],
+      ["2024.04", "Joined the video moving-object removal research project, later implemented as Phantom CleanView."]
     ],
     experienceTitle: "Experience",
     experience: [
-      ["2026 — Now", "VLA Safety & Robustness Research", "Research", "Vision-Language-Action Models"],
-      ["2025.08 — 2026.01", "AC²-VLA Research", "Efficient VLA Inference", "CogACT · SIMPLER · Open-X"],
-      ["2025.08 — 2025.09", "Software Engineering Intern", "Huawei Lianqiu Lake R&D Center", "ArkUI · OpenHarmony"],
-      ["2025.01 — 2025.02", "Bond Underwriting Intern", "Sinolink Securities", "Finance · Research Reports"],
-      ["2023 — Now", "B.E. Software Engineering", "Tongji University", "Shanghai, China"]
+      ["2026.01 — Now", "VLA Safety & Robustness Research", "Research", "Vision-Language-Action Models"],
+      ["2025.08 — 2026.01", "AC²-VLA Research", "Independent First Author · IJCAI 2026 Accepted", "CogACT · SIMPLER · Open-X"],
+      ["2025.08 — 2025.09", "Software Engineering Intern", "Huawei Shanghai Research Institute · OpenHarmony", "ArkUI · OpenHarmony"],
+      ["2025.01 — 2025.02", "Bond Underwriting Intern", "Sinolink Securities · Bond Department III", "Finance · Research Reports"],
+      ["2024.04 — 2025.04", "Video Moving-Object Removal Research", "Core Member · Shanghai College Student Innovation Project", "3D Optical Flow · Point-Cloud Motion Estimation"],
+      ["2023.09 — 2027.06", "B.E. Software Engineering", "Tongji University · College of Computer Science and Technology", "Shanghai, China"]
     ],
     paperTitle: "Selected Publication",
     paper: {
@@ -86,9 +89,9 @@ const DATA = {
       ["Me Agent", "Personal Agent · Memory · iOS", "A personal AI agent concept centered on long-term memory, contextual assistance, voice capture, collections, and mobile-first interaction.", "agent", ["iOS", "Memory", "Tools"], "https://sunnyywd.github.io/Me-Agent-support"],
       ["CareerPilot", "LLM · Matching · HR Platform", "An AI-driven recruiting platform prototype for semantic person-job matching, explainable candidate scoring, and HR-side workflows.", "dashboard", ["Vue", "LLM", "Matching"], "https://github.com/SunnyYWD/CareerPilot.git"],
       ["Phantom CleanView", "Video Editing · 3D Optical Flow", "An intelligent video object removal system guided by 3D optical-flow edges and point-cloud motion estimation, supporting target erasure and voice control.", "video", ["YOLOv8", "E2FGVI", "Streamlit"], "#"],
-      ["JiSpeed", "Delivery Platform · Backend", "A full-stack food delivery and management platform covering ordering, merchant operations, rider dispatching, settlement, anomaly detection, and data visualization.", "delivery", ["Spring Boot", "Redis", "Vue"], "#"],
+      ["JiSpeed", "Delivery Platform · Backend", "A full-stack food delivery and management platform covering ordering, merchant operations, rider dispatching, settlement, anomaly detection, and data visualization.", "delivery", ["Spring Boot", "Redis", "Vue"], "https://github.com/SunnyYWD/JiSpeed"],
       ["LeWan", "Elderly Care · WeChat Mini Program", "A health companion mini program for elderly users, integrating medication reminders, health journals, SOS assistance, speech recognition, and LLM-based intent understanding.", "health", ["WXML", "ASR", "DeepSeek"], "#"],
-      ["Farm Life Simulator", "Game Development · Cocos2d-x", "A Stardew Valley-inspired farming simulation game with crop planting, animal raising, resident interactions, festival activities, skill systems, and farm mechanics.", "game", ["C++", "Cocos2d-x", "Python"], "#"]
+      ["Farm Life Simulator", "Game Development · Cocos2d-x", "A Stardew Valley-inspired farming simulation game with crop planting, animal raising, resident interactions, festival activities, skill systems, and farm mechanics.", "game", ["C++", "Cocos2d-x", "Python"], "https://github.com/SunnyYWD/StarDewValleyGame"]
     ],
     contact: { title: "Contact", desc: "Open to research conversations, collaboration, and thoughtful product ideas.", copyright: "© 2026 Wenda Yu. All rights reserved." }
   },
@@ -101,33 +104,36 @@ const DATA = {
     location: "上海，中国",
     email: "yu_wenda@126.com",
     intro: [
-      "我是于闻达，同济大学计算机科学与技术学院软件工程专业本科生。当前工作围绕具身智能、高效 VLA 推理、安全与鲁棒性评测，以及 AI 原生产品构建展开。",
-      "我关注能够理解上下文、安全行动，并把研究想法真正变成可用系统的 AI。"
+      "我是于闻达，同济大学计算机科学与技术学院软件工程专业本科生。我的研究兴趣集中在面向真实环境的多模态智能体，目前主要关注 VLA 模型和世界模型，在高效推理和对抗攻防方面进行过研究。",
+      "我希望继续沿着具身智能主线，探索世界模型辅助预测与规划、真实场景下的可靠执行，以及 Agent 机制、LLM Memory 与多模态交互历史的组织和利用。"
     ],
     links: [["邮箱", "mailto:yu_wenda@126.com"], ["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"]],
     interestsTitle: "研究兴趣",
-    interests: ["具身智能", "高效 VLA 推理", "安全评测", "个人智能体", "以人为中心的 AI 产品"],
+    interests: ["真实环境多模态智能体", "VLA 高效推理", "可靠执行", "World Model / WAM", "Agent", "LLM Memory", "多模态理解"],
     focusTitle: "方向",
     focus: [
       ["grad", "背景", "同济大学", "计算机科学与技术学院软件工程专业本科生，长期关注 AI 系统与软件工程实践。"],
-      ["cpu", "研究", "具身智能", "关注 VLA 模型的高效推理、自适应计算、安全评测与真实部署问题。"],
-      ["pen", "构建", "AI 产品", "从个人智能体到智能招聘系统，把想法转化为可交互、可使用的原型。"],
-      ["book", "兴趣", "长期思考", "关注科技、社会、财经、历史、产品设计与人的长期成长系统。"]
+      ["cpu", "研究", "VLA 与具身智能", "关注 VLA 模型的高效推理、可靠执行、自适应计算、安全评测与真实部署问题。"],
+      ["pen", "方向", "世界模型", "理解动作如何改变环境，把预测与规划能力引入面向真实场景的具身智能。"],
+      ["book", "Agent", "LLM Memory 与多模态", "关注 Agent 交互中的记忆机制，以及视觉、语言、动作和任务反馈等多模态历史的检索与利用。"]
     ],
     newsTitle: "近期动态",
     news: [
-      ["2026", "AC²-VLA 被 IJCAI 2026 接收。"],
-      ["2026", "开始 VLA 安全与鲁棒性研究。"],
-      ["2025", "围绕 CogACT、SIMPLER、Open-X 做 AC²-VLA 高效 VLA 推理研究。"],
-      ["2025", "构建 Me Agent、CareerPilot 等 AI 产品原型。"]
+      ["2026.05", "AC²-VLA 论文被 IJCAI 2026 录用。"],
+      ["2026.04", "独立开发 Me Agent 个人智能体与长期记忆助手 iOS 应用。"],
+      ["2026.01", "开始 VLA 安全与鲁棒性研究。"],
+      ["2025.09", "启动 SmartHire 智能匹配与职业成长招聘系统项目。"],
+      ["2025.08", "开展 AC²-VLA 高效 VLA 推理研究，并在华为上海研究所 OpenHarmony 二部实习。"],
+      ["2024.04", "参与视频运动目标无痕消除方法研究，成果落地「幻影净界」系统。"]
     ],
     experienceTitle: "经历",
     experience: [
-      ["2026 — 至今", "VLA 安全与鲁棒性研究", "科研经历", "Vision-Language-Action Models"],
-      ["2025.08 — 2026.01", "AC²-VLA 推理加速研究", "高效 VLA 推理", "CogACT · SIMPLER · Open-X"],
-      ["2025.08 — 2025.09", "软件开发工程师实习生", "华为练秋湖研发中心", "ArkUI · OpenHarmony"],
-      ["2025.01 — 2025.02", "债券承做实习生", "国金证券股份有限公司", "财务分析 · 专题研究报告"],
-      ["2023 — 至今", "软件工程专业本科", "同济大学", "上海，中国"]
+      ["2026.01 — 至今", "VLA 安全与鲁棒性研究", "科研经历", "Vision-Language-Action Models"],
+      ["2025.08 — 2026.01", "AC²-VLA 推理加速研究", "科研经历｜独立一作｜IJCAI 2026 录用", "CogACT · SIMPLER · Open-X"],
+      ["2025.08 — 2025.09", "软件开发工程师实习生", "华为上海研究所｜终端 BG OpenHarmony 二部", "ArkUI · OpenHarmony"],
+      ["2025.01 — 2025.02", "债券承做实习生", "国金证券股份有限公司｜债券三部", "财务分析 · 专题研究报告"],
+      ["2024.04 — 2025.04", "视频运动目标无痕消除方法研究", "科研经历｜核心成员｜上海市大学生创新创业训练计划项目", "3D 光流 · 点云运动估计 · 幻影净界"],
+      ["2023.09 — 2027.06", "软件工程专业本科", "同济大学｜计算机科学与技术学院", "上海，中国"]
     ],
     paperTitle: "代表论文",
     paper: {
@@ -150,9 +156,9 @@ const DATA = {
       ["Me Agent", "个人智能体 · 记忆 · iOS", "一个以长期记忆、上下文理解、语音捕捉、合集展示和移动端交互为核心的个人智能体产品设想。", "agent", ["iOS", "记忆", "工具调用"], "https://sunnyywd.github.io/Me-Agent-support"],
       ["CareerPilot", "LLM · 人岗匹配 · 招聘平台", "AI 驱动的招聘系统原型，支持语义级人岗匹配、可解释候选人评分和 HR 侧业务流程管理。", "dashboard", ["Vue", "LLM", "匹配"], "https://github.com/SunnyYWD/CareerPilot.git"],
       ["幻影净界", "视频编辑 · 3D 光流 · 目标无痕消除", "基于 3D 光流边缘引导与点云运动估计的视频目标无痕消除系统，支持指定目标擦除、视频元素编辑与语音控制交互。", "video", ["YOLOv8", "E2FGVI", "Streamlit"], "#"],
-      ["JiSpeed", "外卖配送 · 后端系统 · 数据平台", "一站式外卖配送与管理平台，覆盖用户点餐、商家运营、骑手派单、后台结算、异常检测与全链路数据可视化。", "delivery", ["Spring Boot", "Redis", "Vue"], "#"],
+      ["JiSpeed", "外卖配送 · 后端系统 · 数据平台", "一站式外卖配送与管理平台，覆盖用户点餐、商家运营、骑手派单、后台结算、异常检测与全链路数据可视化。", "delivery", ["Spring Boot", "Redis", "Vue"], "https://github.com/SunnyYWD/JiSpeed"],
       ["乐晚", "老年健康 · 微信小程序 · 语音 AI", "面向 60+ 老年用户的健康管理与陪伴小程序，集成用药提醒、健康日记、SOS 求助、一键联系、语音识别与大模型意图理解。", "health", ["WXML", "ASR", "DeepSeek"], "#"],
-      ["农场生活模拟游戏", "游戏开发 · C++ · Cocos2d-x", "星露谷风格的农场生活模拟游戏，包含作物种植、动物养殖、居民互动、节日活动、技能系统与农场核心玩法。", "game", ["C++", "Cocos2d-x", "Python"], "#"]
+      ["农场生活模拟游戏", "游戏开发 · C++ · Cocos2d-x", "星露谷风格的农场生活模拟游戏，包含作物种植、动物养殖、居民互动、节日活动、技能系统与农场核心玩法。", "game", ["C++", "Cocos2d-x", "Python"], "https://github.com/SunnyYWD/StarDewValleyGame"]
     ],
     contact: { title: "联系", desc: "欢迎交流研究、产品想法、长期项目和有意思的合作。", copyright: "© 2026 于闻达。保留所有权利。" }
   }
@@ -187,7 +193,7 @@ function ProfileCard({ t, isZh }) {
           <p className="mt-3 text-sm leading-6 text-slate-600">{t.role}</p>
           <p className="text-sm leading-6 text-slate-600">{t.org}</p>
         </div>
-        <div className="mt-6 space-y-3 border-t border-slate-200 pt-5 text-sm text-slate-650">
+        <div className="mt-6 space-y-3 border-t border-slate-200 pt-5 text-sm text-slate-600">
           <a className="flex items-center gap-3 transition hover:text-sky-700" href={`mailto:${t.email}`}>
             <Icon name="mail" className="h-4 w-4 text-slate-500" /> {t.email}
           </a>
@@ -312,7 +318,7 @@ function ProjectList({ projects, details }) {
           <article key={title} className="flex h-full min-h-[280px] flex-col border border-slate-200 bg-white p-5 transition hover:border-sky-300 hover:shadow-sm">
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-sky-800">{category}</p>
             <h3 className="mt-3 font-en-title text-2xl text-slate-950">{title}</h3>
-            <p className="mt-3 flex-1 text-sm leading-7 text-slate-650">{body}</p>
+            <p className="mt-3 flex-1 text-sm leading-7 text-slate-600">{body}</p>
             <div className="mt-5 flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <span key={tag} className="border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-600">{tag}</span>
