@@ -1,5 +1,7 @@
 import React from "react";
 
+const PROFILE_PHOTO = `${import.meta.env.BASE_URL}profile-photo.png`;
+
 function Icon({ name, className = "h-4 w-4", strokeWidth = 1.7 }) {
   const common = {
     className,
@@ -15,9 +17,6 @@ function Icon({ name, className = "h-4 w-4", strokeWidth = 1.7 }) {
     external: <path d="M14 4h6v6m0-6-9 9m-1-7H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5" />,
     mail: <path d="M4 6h16v12H4zM4 7l8 6 8-6" />,
     map: <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />,
-    user: <path d="M20 21a8 8 0 0 0-16 0m8-9a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />,
-    sun: <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.4-6.4 1.4-1.4M4.2 19.8l1.4-1.4m0-12.8L4.2 4.2m15.6 15.6-1.4-1.4M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />,
-    moon: <path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 7 7 0 1 0 20 15.5Z" />,
     book: <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12Zm0 0V18m4-11h8m-8 4h8" />,
     cpu: <path d="M8 8h8v8H8zM4 9h2m-2 6h2m12-6h2m-2 6h2M9 4v2m6-2v2M9 18v2m6-2v2" />,
     pen: <path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Zm11-13 3 3" />,
@@ -40,9 +39,9 @@ const DATA = {
       "I’m Wenda Yu, a software engineering undergraduate at Tongji University. My research interest centers on multimodal agents for real-world environments. I currently focus on VLA models and world models, with prior research in efficient inference and adversarial attack-defense.",
       "I am exploring how embodied agents can move beyond direct action prediction toward world-model-assisted planning and reliable execution, while also studying agents, LLM memory, and the organization of multimodal interaction histories."
     ],
-    links: [["Email", "mailto:yu_wenda@126.com"], ["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"]],
+    links: [["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"]],
     interestsTitle: "Research Interests",
-    interests: ["Real-world multimodal agents", "Efficient VLA inference", "Reliable execution", "World models / WAM", "Agents", "LLM Memory", "Multimodal understanding"],
+    interests: ["Real-world multimodal agents", "Efficient VLA inference", "Reliable execution", "World models / WAM", "Agents", "LLM Memory"],
     focusTitle: "Focus",
     focus: [
       ["grad", "Background", "Tongji University", "Software Engineering undergraduate in the College of Computer Science and Technology."],
@@ -55,8 +54,10 @@ const DATA = {
       ["2026.05", "AC²-VLA paper was accepted by IJCAI 2026."],
       ["2026.04", "Independently developed Me Agent, an iOS app for personal agents and long-term memory."],
       ["2026.01", "Started research on VLA safety and robustness."],
-      ["2025.09", "Started SmartHire, an intelligent recruiting and career-growth system."],
+      ["2025.09", "Started CareerPilot, an intelligent recruiting and career-growth system."],
       ["2025.08", "Started AC²-VLA efficient VLA inference research and interned at Huawei Shanghai Research Institute."],
+      ["2025.03", "Started developing JiSpeed, a food delivery and management platform."],
+      ["2025.01", "Interned at Sinolink Securities, supporting bond underwriting and financial research."],
       ["2024.04", "Joined the video moving-object removal research project, later implemented as Phantom CleanView."]
     ],
     experienceTitle: "Experience",
@@ -107,9 +108,9 @@ const DATA = {
       "我是于闻达，同济大学计算机科学与技术学院软件工程专业本科生。我的研究兴趣集中在面向真实环境的多模态智能体，目前主要关注 VLA 模型和世界模型，在高效推理和对抗攻防方面进行过研究。",
       "我希望继续沿着具身智能主线，探索世界模型辅助预测与规划、真实场景下的可靠执行，以及 Agent 机制、LLM Memory 与多模态交互历史的组织和利用。"
     ],
-    links: [["邮箱", "mailto:yu_wenda@126.com"], ["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"]],
+    links: [["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"]],
     interestsTitle: "研究兴趣",
-    interests: ["真实环境多模态智能体", "VLA 高效推理", "可靠执行", "World Model / WAM", "Agent", "LLM Memory", "多模态理解"],
+    interests: ["真实环境多模态智能体", "VLA 高效推理", "可靠执行", "World Model / WAM", "Agent", "LLM Memory"],
     focusTitle: "方向",
     focus: [
       ["grad", "背景", "同济大学", "计算机科学与技术学院软件工程专业本科生，长期关注 AI 系统与软件工程实践。"],
@@ -122,8 +123,10 @@ const DATA = {
       ["2026.05", "AC²-VLA 论文被 IJCAI 2026 录用。"],
       ["2026.04", "独立开发 Me Agent 个人智能体与长期记忆助手 iOS 应用。"],
       ["2026.01", "开始 VLA 安全与鲁棒性研究。"],
-      ["2025.09", "启动 SmartHire 智能匹配与职业成长招聘系统项目。"],
+      ["2025.09", "启动 CareerPilot 智能匹配与职业成长招聘系统项目。"],
       ["2025.08", "开展 AC²-VLA 高效 VLA 推理研究，并在华为上海研究所 OpenHarmony 二部实习。"],
+      ["2025.03", "开始 JiSpeed 外卖配送与管理平台开发。"],
+      ["2025.01", "在国金证券债券三部实习，参与债券承做与专题研究工作。"],
       ["2024.04", "参与视频运动目标无痕消除方法研究，成果落地「幻影净界」系统。"]
     ],
     experienceTitle: "经历",
@@ -185,8 +188,8 @@ function ProfileCard({ t, isZh }) {
   return (
     <aside className="lg:sticky lg:top-28">
       <div className="border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="mx-auto flex aspect-square w-44 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-[radial-gradient(circle_at_34%_28%,#e8eef7_0,#e8eef7_18%,transparent_19%),linear-gradient(135deg,#f8fafc,#e8edf3_42%,#d6dde7)] text-slate-800">
-          <span className="font-en-title text-5xl tracking-wide">WY</span>
+        <div className="mx-auto aspect-square w-44 overflow-hidden border border-slate-200 bg-slate-50">
+          <img src={PROFILE_PHOTO} alt={t.brand} className="h-full w-full object-cover object-[50%_38%]" />
         </div>
         <div className="mt-6 text-center">
           <h1 className={`${isZh ? "font-cn-title text-4xl tracking-[0.12em]" : "font-en-title text-4xl"} text-slate-950`}>{t.brand}</h1>
@@ -199,9 +202,6 @@ function ProfileCard({ t, isZh }) {
           </a>
           <div className="flex items-center gap-3">
             <Icon name="map" className="h-4 w-4 text-slate-500" /> {t.location}
-          </div>
-          <div className="flex items-center gap-3">
-            <Icon name="user" className="h-4 w-4 text-slate-500" /> {t.org}
           </div>
         </div>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -351,11 +351,9 @@ export default function WendaEditorialPortfolio() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <Icon name="sun" className="hidden h-4 w-4 text-slate-500 sm:block" />
             <button type="button" onClick={() => setLang(isZh ? "en" : "zh")} className="border border-slate-200 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-slate-700 transition hover:border-sky-300 hover:text-sky-700">
               {t.lang}
             </button>
-            <Icon name="moon" className="hidden h-4 w-4 text-slate-500 sm:block" />
           </div>
         </div>
       </header>
@@ -381,9 +379,6 @@ export default function WendaEditorialPortfolio() {
           <footer id="contact" className="py-10">
             <h2 className="mb-3 font-en-title text-2xl text-slate-950">{t.contact.title}</h2>
             <p className="text-sm leading-7 text-slate-600">{t.contact.desc}</p>
-            <a href={`mailto:${t.email}`} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sky-800 hover:text-sky-600">
-              <Icon name="mail" /> {t.email}
-            </a>
             <p className="mt-8 border-t border-slate-200 pt-5 text-xs text-slate-500">{t.contact.copyright}</p>
           </footer>
         </div>
