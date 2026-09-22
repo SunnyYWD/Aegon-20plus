@@ -18,6 +18,7 @@ function Icon({ name, className = "h-4 w-4", strokeWidth = 1.7 }) {
     mail: <path d="M4 6h16v12H4zM4 7l8 6 8-6" />,
     map: <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />,
     book: <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12Zm0 0V18m4-11h8m-8 4h8" />,
+    github: <><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.28-.36 6.72-1.61 6.72-7A5.4 5.4 0 0 0 19.28 3.75 5 5 0 0 0 19.14 0S17.95-.36 15 1.48a13.38 13.38 0 0 0-7 0C5.05-.36 3.86 0 3.86 0a5 5 0 0 0-.14 3.75A5.4 5.4 0 0 0 2.28 7.5c0 5.38 3.44 6.64 6.72 7A4.8 4.8 0 0 0 8 18v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></>,
     cpu: <path d="M8 8h8v8H8zM4 9h2m-2 6h2m12-6h2m-2 6h2M9 4v2m6-2v2M9 18v2m6-2v2" />,
     pen: <path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Zm11-13 3 3" />,
     shield: <path d="M12 3l7 3v5c0 5-3.2 8.2-7 10-3.8-1.8-7-5-7-10V6l7-3Zm-3 9 2 2 4-5" />,
@@ -29,21 +30,25 @@ function Icon({ name, className = "h-4 w-4", strokeWidth = 1.7 }) {
 const DATA = {
   en: {
     brand: "Wenda Yu",
-    nav: [["About", "about"], ["Papers", "paper"], ["News", "news"], ["Experience", "experience"], ["Projects", "projects"]],
+    nav: [["About", "about"], ["Papers", "paper"], ["News", "news"], ["Internships", "experience"], ["Projects", "projects"]],
     lang: "中文",
-    role: "Software Engineering Undergraduate",
-    org: "Tongji University",
-    classYear: "Class of 2027",
+    role: "Incoming CS PhD Student",
+    org: "Shanghai Jiao Tong University",
     location: "Shanghai, China",
     email: "yu_wenda@126.com",
     languageScore: "IELTS 7.5",
     intro: [
-      "I’m Wenda Yu, a software engineering undergraduate in the College of Computer Science and Technology at Tongji University. My research focuses on embodied intelligence and vision-language-action models, especially efficient inference, runtime safeguarding, and reliable execution in real-world environments.",
+      "I’m Wenda Yu, an incoming PhD student in Computer Science and Technology at Shanghai Jiao Tong University. My research focuses on embodied intelligence and vision-language-action models, especially efficient inference, runtime safeguarding, and reliable execution in real-world environments.",
       "I led AC²-VLA as an independent first author, developing action-context-aware adaptive computation for efficient VLA inference. I am also the first author of ActFovea, a plug-and-play runtime safeguarding framework that uses spatiotemporal visual-action consistency to detect disturbances, recover trustworthy observations, verify action chunks, and trigger bounded safe failure when reliable recovery is impossible.",
       "Beyond these projects, I am interested in world-model-assisted prediction and planning, agent mechanisms, LLM memory, and the organization and retrieval of multimodal interaction histories."
     ],
     introLinks: [["AC²-VLA", "https://arxiv.org/abs/2601.19634"], ["ActFovea", "https://arxiv.org/abs/2607.29169"]],
-    links: [["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"], ["ActFovea", "https://arxiv.org/abs/2607.29169"]],
+    links: [["GitHub", "https://github.com/SunnyYWD"]],
+    educationTitle: "Education",
+    education: [
+      ["2027.09", "PhD in Computer Science and Technology", "Shanghai Jiao Tong University · School of Computer Science"],
+      ["2023.09 — 2027.06", "B.E. in Software Engineering", "Tongji University · College of Computer Science and Technology"]
+    ],
     newsTitle: "News",
     news: [
       ["2026.07", "Released the ActFovea preprint on arXiv, presenting a plug-and-play runtime safeguard for VLA policies."],
@@ -56,21 +61,18 @@ const DATA = {
       ["2025.01", "Interned at Sinolink Securities, supporting bond underwriting and financial research."],
       ["2024.04", "Joined the video moving-object removal research project, later implemented as Phantom CleanView."]
     ],
-    experienceTitle: "Experience",
+    experienceTitle: "Internships",
     experience: [
-      ["2026.01 — Now", "ActFovea: Runtime Safeguarding for VLA Policies", "Research · First Author", "VLA Safety · Runtime Safeguarding · LIBERO"],
-      ["2025.08 — 2026.01", "AC²-VLA Research", "Independent First Author · IJCAI 2026 Accepted", "CogACT · SIMPLER · Open-X"],
       ["2025.08 — 2025.09", "Software Engineering Intern", "Huawei Shanghai Research Institute · OpenHarmony", "ArkUI · OpenHarmony"],
-      ["2025.01 — 2025.02", "Bond Underwriting Intern", "Sinolink Securities · Bond Department III", "Finance · Research Reports"],
-      ["2024.04 — 2025.04", "Video Moving-Object Removal Research", "Core Member · Shanghai College Student Innovation Project", "3D Optical Flow · Point-Cloud Motion Estimation"],
-      ["2023.09 — 2027.06", "B.E. Software Engineering", "Tongji University · College of Computer Science and Technology", "Shanghai, China"]
+      ["2025.01 — 2025.02", "Bond Underwriting Intern", "Sinolink Securities · Bond Department III", "Financial Analysis · Thematic Research Reports"]
     ],
     paperTitle: "Selected Publications",
     papers: [
       {
         status: "arXiv 2026",
         title: "ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency",
-        authors: "Wenda Yu, Tianshi Wang, Fengling Li, Xin Li, Jingjing Li, Lei Zhu",
+        authorName: "Wenda Yu",
+        authors: ", Tianshi Wang, Fengling Li, Xin Li, Jingjing Li, Lei Zhu",
         venue: "arXiv:2607.29169 · Robotics",
         body: "ActFovea is a plug-and-play runtime safeguarding framework for frozen VLA policies. It combines action-conditioned foveation, spatiotemporal consistency monitoring, observation recovery, action-chunk verification, and recoverability-aware safe failure without retraining the underlying policy.",
         metrics: [["93.7%", "Attack gap recovered"], ["+9.8 pp", "Visual-delay success"]],
@@ -82,7 +84,8 @@ const DATA = {
       {
         status: "IJCAI 2026",
         title: "AC²-VLA: Action-Context-Aware Adaptive Computation in Vision-Language-Action Models for Efficient Robotic Manipulation",
-        authors: "Wenda Yu, Tianshi Wang, Fengling Li, Jingjing Li, Lei Zhu",
+        authorName: "Wenda Yu",
+        authors: ", Tianshi Wang, Fengling Li, Jingjing Li, Lei Zhu",
         venue: "IJCAI 2026 · arXiv:2601.19634 · Robotics",
         body: "AC²-VLA introduces an action-context-aware adaptive computation framework for efficient closed-loop VLA inference. It exploits temporal, spatial, and depth redundancies through cognition reuse, visual token pruning, and selective execution.",
         metrics: [["1.79×", "Speedup"], ["29.4%", "FLOPs"], ["3", "Redundancy axes"]],
@@ -108,21 +111,25 @@ const DATA = {
   },
   zh: {
     brand: "于闻达",
-    nav: [["关于", "about"], ["论文", "paper"], ["动态", "news"], ["经历", "experience"], ["项目", "projects"]],
+    nav: [["关于", "about"], ["论文", "paper"], ["动态", "news"], ["实习经历", "experience"], ["项目", "projects"]],
     lang: "EN",
-    role: "软件工程专业本科生",
-    org: "同济大学",
-    classYear: "2027 届",
+    role: "CS PhD Student",
+    org: "上海交通大学",
     location: "上海，中国",
     email: "yu_wenda@126.com",
     languageScore: "雅思 7.5",
     intro: [
-      "我是于闻达，同济大学计算机科学与技术学院软件工程专业本科生。我的研究聚焦具身智能与视觉-语言-动作模型，尤其关注高效推理、运行时安全，以及真实环境中的可靠执行。",
+      "我是于闻达，将于 2027 年 9 月进入上海交通大学计算机学院攻读计算机科学与技术博士学位。我的研究聚焦具身智能与视觉-语言-动作模型，尤其关注高效推理、运行时安全，以及真实环境中的可靠执行。",
       "我以独立第一作者开展 AC²-VLA 研究，探索面向 VLA 高效推理的动作上下文自适应计算；同时作为第一作者提出 ActFovea，通过时空视觉-动作一致性检测运行时扰动，恢复可信观测、验证动作 chunk，并在无法可靠恢复时触发有界安全失效。",
       "在此基础上，我也关注世界模型辅助的预测与规划、Agent 机制、LLM Memory，以及多模态交互历史的组织、检索与利用。"
     ],
     introLinks: [["AC²-VLA", "https://arxiv.org/abs/2601.19634"], ["ActFovea", "https://arxiv.org/abs/2607.29169"]],
-    links: [["GitHub", "https://github.com/SunnyYWD"], ["AC²-VLA", "https://arxiv.org/abs/2601.19634"], ["ActFovea", "https://arxiv.org/abs/2607.29169"]],
+    links: [["GitHub", "https://github.com/SunnyYWD"]],
+    educationTitle: "教育经历",
+    education: [
+      ["2027.09 入学", "计算机科学与技术专业博士研究生", "上海交通大学｜计算机学院"],
+      ["2023.09 — 2027.06", "软件工程专业本科", "同济大学｜计算机科学与技术学院"]
+    ],
     newsTitle: "近期动态",
     news: [
       ["2026.07", "ActFovea 预印本发布于 arXiv，提出面向 VLA 策略的即插即用运行时安全防护框架。"],
@@ -135,21 +142,18 @@ const DATA = {
       ["2025.01", "在国金证券债券三部实习，参与债券承做与专题研究工作。"],
       ["2024.04", "参与视频运动目标无痕消除方法研究，成果落地「幻影净界」系统。"]
     ],
-    experienceTitle: "经历",
+    experienceTitle: "实习经历",
     experience: [
-      ["2026.01 — 至今", "ActFovea：面向 VLA 策略的运行时安全防护", "科研经历｜第一作者", "VLA 安全 · 运行时防护 · LIBERO"],
-      ["2025.08 — 2026.01", "AC²-VLA 推理加速研究", "科研经历｜独立一作｜IJCAI 2026 录用", "CogACT · SIMPLER · Open-X"],
       ["2025.08 — 2025.09", "软件开发工程师实习生", "华为上海研究所｜终端 BG OpenHarmony 二部", "ArkUI · OpenHarmony"],
-      ["2025.01 — 2025.02", "债券承做实习生", "国金证券股份有限公司｜债券三部", "财务分析 · 专题研究报告"],
-      ["2024.04 — 2025.04", "视频运动目标无痕消除方法研究", "科研经历｜核心成员｜上海市大学生创新创业训练计划项目", "3D 光流 · 点云运动估计 · 幻影净界"],
-      ["2023.09 — 2027.06", "软件工程专业本科", "同济大学｜计算机科学与技术学院", "上海，中国"]
+      ["2025.01 — 2025.02", "债券承做实习生", "国金证券股份有限公司｜债券三部", "财务分析 · 专题研究报告"]
     ],
     paperTitle: "代表论文",
     papers: [
       {
         status: "arXiv 2026",
         title: "ActFovea：基于时空视觉-动作一致性的 VLA 策略运行时安全防护",
-        authors: "于闻达（Wenda Yu）, Tianshi Wang, Fengling Li, Xin Li, Jingjing Li, Lei Zhu",
+        authorName: "于闻达（Wenda Yu）",
+        authors: ", Tianshi Wang, Fengling Li, Xin Li, Jingjing Li, Lei Zhu",
         venue: "arXiv:2607.29169 · Robotics",
         body: "ActFovea 是面向冻结 VLA 策略的即插即用运行时安全防护框架，结合动作条件注视、时空一致性监测、观测恢复、动作 chunk 验证与可恢复性感知的安全失效机制，无需重新训练底层策略。",
         metrics: [["93.7%", "攻击差距恢复"], ["+9.8 pp", "视觉延迟成功率"]],
@@ -161,7 +165,8 @@ const DATA = {
       {
         status: "IJCAI 2026",
         title: "AC²-VLA：面向高效机器人操作的动作上下文自适应计算 VLA 模型",
-        authors: "于闻达（Wenda Yu）, Tianshi Wang, Fengling Li, Jingjing Li, Lei Zhu",
+        authorName: "于闻达（Wenda Yu）",
+        authors: ", Tianshi Wang, Fengling Li, Jingjing Li, Lei Zhu",
         venue: "IJCAI 2026 · arXiv:2601.19634 · Robotics",
         body: "AC²-VLA 提出面向闭环 VLA 推理的动作上下文自适应计算框架，通过认知复用、视觉 token 剪枝与模型组件选择性执行，挖掘时间、空间与深度维度的结构化冗余。",
         metrics: [["1.79×", "最高加速"], ["29.4%", "FLOPs"], ["3", "冗余维度"]],
@@ -215,7 +220,6 @@ function ProfileCard({ t, isZh }) {
           <h1 className={`${isZh ? "font-cn-title text-4xl tracking-[0.12em]" : "font-en-title text-4xl"} text-slate-950`}>{t.brand}</h1>
           <p className="mt-3 text-sm leading-6 text-slate-600">{t.role}</p>
           <p className="text-sm leading-6 text-slate-600">{t.org}</p>
-          <p className="text-sm leading-6 text-slate-600">{t.classYear}</p>
         </div>
         <div className="mt-6 space-y-3 border-t border-slate-200 pt-5 text-sm text-slate-600">
           <a className="flex items-center gap-3 transition hover:text-sky-700" href={`mailto:${t.email}`}>
@@ -227,12 +231,9 @@ function ProfileCard({ t, isZh }) {
           <div className="flex items-center gap-3">
             <Icon name="book" className="h-4 w-4 text-slate-500" /> {t.languageScore}
           </div>
-        </div>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
           {t.links.map(([label, href]) => (
-            <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="inline-flex items-center gap-1.5 border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700">
-              {label}
-              {href.startsWith("http") && <Icon name="external" className="h-3.5 w-3.5" />}
+            <a key={label} href={href} target="_blank" rel="noreferrer" className="flex items-center gap-3 transition hover:text-sky-700">
+              <Icon name="github" className="h-4 w-4 shrink-0 text-slate-500" /> {label}
             </a>
           ))}
         </div>
@@ -283,6 +284,24 @@ function Intro({ t }) {
   );
 }
 
+function EducationList({ title, items }) {
+  return (
+    <div className="mt-8">
+      <h3 className="mb-4 font-en-title text-2xl text-slate-950">{title}</h3>
+      <div className="grid gap-4 md:grid-cols-2">
+        {items.map(([date, degree, school, detail]) => (
+          <article key={`${date}-${degree}`} className="border border-slate-200 bg-slate-50/60 p-5">
+            <time className="text-xs font-bold uppercase tracking-[0.12em] text-sky-800">{date}</time>
+            <h4 className="mt-3 text-base font-semibold leading-7 text-slate-950">{degree}</h4>
+            <p className="mt-1 text-sm leading-6 text-slate-700">{school}</p>
+            {detail && <p className="mt-1 text-sm leading-6 text-slate-500">{detail}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function NewsList({ items }) {
   return (
     <ul className="space-y-3">
@@ -321,7 +340,10 @@ function PaperEntry({ paper }) {
         <span className="text-sm text-slate-500">{paper.venue}</span>
       </div>
       <h3 className="mt-4 font-en-title text-2xl leading-snug text-slate-950">{paper.title}</h3>
-      <p className="mt-3 text-sm leading-7 text-slate-600">{paper.authors}</p>
+      <p className="mt-3 text-sm leading-7 text-slate-600">
+        <strong className="font-bold text-slate-800">{paper.authorName}</strong>
+        {paper.authors}
+      </p>
       <p className="mt-4 text-[0.98rem] leading-8 text-slate-700">{paper.body}</p>
       <div className={`mt-5 grid max-w-lg ${paper.metrics.length === 2 ? "grid-cols-2" : "grid-cols-3"} divide-x divide-slate-200 border-y border-slate-200`}>
         {paper.metrics.map(([value, label]) => (
@@ -407,6 +429,7 @@ export default function WendaEditorialPortfolio() {
         <div>
           <Section id="about" title="About">
             <Intro t={t} />
+            <EducationList title={t.educationTitle} items={t.education} />
           </Section>
           <Section id="paper" title={t.paperTitle}>
             <PaperList papers={t.papers} />
